@@ -1,0 +1,7 @@
+config.py
+/*
+/.idea
+/.idea/*
+!/main.py
+!/README.md
+!.gitignore
