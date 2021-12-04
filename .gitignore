@@ -2,6 +2,6 @@ config.py
 /*
 /.idea
 /.idea/*
-!/main.py
+!/first_bot.py
 !/README.md
 !.gitignore
