@@ -38,9 +38,10 @@ def receive_image_and_caption(msg: types.Message):
         bot.send_photo(msg.chat.id, create_demotivator(downloaded_file, msg.caption))
 
 
-@bot.message_handler(content_types=["text"])
+@bot.message_handler(content_types=["text", "photo", "document", "audio", "video",
+                                    "contact", "sticker", "video_note", "location"])
 def random_answer(msg: types.Message):
-    if msg.text.startswith("/"):
+    if msg.text is not None and msg.text.startswith("/"):
         bot.send_message(msg.chat.id, "Я такой команды не знаю, лучше попробуй /demotivator")
     else:
         bot.send_message(msg.chat.id, get_random_answer())
