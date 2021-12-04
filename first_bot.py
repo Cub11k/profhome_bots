@@ -1,6 +1,6 @@
 from config import TOKEN
 from telebot import TeleBot, types
-from demotivator import create_demotivator
+from utils import create_demotivator, get_random_answer
 
 bot = TeleBot(TOKEN, parse_mode="MarkdownV2")
 
@@ -36,6 +36,11 @@ def receive_image_and_caption(msg: types.Message):
         file_info = bot.get_file(msg.photo[-1].file_id)
         downloaded_file = bot.download_file(file_info.file_path)
         bot.send_photo(msg.chat.id, create_demotivator(downloaded_file, msg.caption))
+
+
+@bot.message_handler(content_types=["text"])
+def random_answer(msg: types.Message):
+    bot.send_message(msg.chat.id, get_random_answer())
 
 
 if __name__ == '__main__':

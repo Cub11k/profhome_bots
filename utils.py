@@ -13,6 +13,22 @@ default_captions = [
     "ум ваче сей(("
 ]
 
+default_answers = [
+    "Раз на раз?",
+    "Думаю что нет",
+    "sample text",
+    "Купи слона",
+    "Д",
+    "Удачи на сессии",
+    "Пожалуй откажусь",
+    "Ну привет",
+    "Братан, займи сотку"
+]
+
+
+def get_random_answer():
+    return random.choice(default_answers)
+
 
 def create_demotivator(image: bytes, caption: str = None):
 

@@ -5,4 +5,4 @@ config.py
 !/first_bot.py
 !/README.md
 !.gitignore
-!/demotivator.py
+!/utils.py
