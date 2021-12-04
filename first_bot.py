@@ -38,6 +38,11 @@ def receive_image_and_caption(msg: types.Message):
         bot.send_photo(msg.chat.id, create_demotivator(downloaded_file, msg.caption))
 
 
+@bot.message_handler(regexp="/*")
+def unknown_command(msg: types.Message):
+    bot.send_message(msg.chat.id, "Я такой команды не знаю, лучше попробуй /demotivator")
+
+
 @bot.message_handler(content_types=["text"])
 def random_answer(msg: types.Message):
     bot.send_message(msg.chat.id, get_random_answer())
