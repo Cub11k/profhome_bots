@@ -4,5 +4,6 @@ config.py
 /.idea/*
 !/first_bot.py
 !/README.md
+!/CheckList.md
 !.gitignore
 !/utils.py
